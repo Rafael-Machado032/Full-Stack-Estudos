@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alerta</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="alert alert-success alert-dismissible fade show">
+    <button class="btn-close" data-bs-dismiss="alert"></button>
+    <strong>Sucesso</strong> em uma ação
+  </div>
+  <div class="alert alert-info alert-dismissible fade show">
+    <button class="btn-close" data-bs-dismiss="alert"></button>
+    <strong>Info</strong> indica uma informação
+  </div>
+  <div class="alert alert-warning alert-dismissible fade show">
+    <button class="btn-close" data-bs-dismiss="alert"></button>
+    <strong>Warning</strong> indica um alerta
+  </div>
+  <div class="alert alert-danger alert-dismissible fade show">
+    <button class="btn-close" data-bs-dismiss="alert"></button>
+    <strong>Danger</strong> indica um negativa
+  </div>
+  <div class="alert alert-primary alert-dismissible fade show">
+    <button class="btn-close" data-bs-dismiss="alert"></button>
+    <strong>Primary</strong> indica uma ação importante
+  </div>
+  <div class="alert alert-secondary alert-dismissible fade show">
+    <button class="btn-close" data-bs-dismiss="alert"></button>
+    <strong>Secondary</strong> indica uma ação não muito importante
+  </div>
+  
+  <!--
+  alert                   -> classe base
+  alert-<tipo>            -> define o tipo do alerta
+  alert-dismissible       -> define que o alerta pode ser fechado
+  fade show               -> define a animação de aparecimento do alerta
+  btn-close               -> define o botão de fechar
+  data-bs-dismiss="alert" -> define que o botão fecha o alerta
+  strong                  -> define o texto em negrito
+  -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
