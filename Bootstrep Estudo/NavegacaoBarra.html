@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Barra de Navegacao</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark"><!--
+      navbar-expand-lg: expande a barra de navegação em telas grandes e colapsa em telas pequenas
+      navbar-dark: define o esquema de cores para texto claro em fundo escuro
+      bg-dark: define a cor de fundo como escura
+    -->
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="#">
+        <img src="caminho/para/o/logo.png" alt="Logotipo">
+      </a>
+      <!--navbar-brand: define o estilo do logotipo-->
+      <form class="d-flex" action="">
+        <input class="form-control me-2" type="text" placeholder="Pesquisar">
+        <button class="btn btn-primary" type="submit">Ir</button>
+      </form><!--
+          d-flex: aplica o layout flexbox para alinhar os elementos horizontalmente
+          me-2: adiciona uma margem à direita do input para espaçamento
+          form-control: aplica estilos padrão do Bootstrap ao campo de entrada
+          placeholder: texto exibido dentro do campo de entrada quando vazio
+        -->
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button><!--
+        navbar-toggler: botão que aparece em telas pequenas para expandir/colapsar a barra de navegação
+        data-bs-toggle="collapse": indica que o botão controla um elemento colapsável
+        data-bs-target="#navbarNav": especifica o ID do elemento que será colapsado/expandido
+        aria-controls, aria-expanded, aria-label: atributos de acessibilidade para melhorar a usabilidade.
+      -->
+
+      <div class="collapse navbar-collapse" id="navbarNav"><!--
+          collapse navbar-collapse: define o comportamento colapsável da barra de navegação
+        -->
+        <ul class="navbar-nav"><!--
+            navbar-nav: define o estilo da lista de navegação
+          -->
+          <li class="nav-item"><!--
+              nav-item: define o estilo de cada item da navegação
+            -->
+            <a class="nav-link active" aria-current="page" href="#">Home</a><!--
+                nav-link: define o estilo do link de navegação
+                active: indica que este é o link ativo (página atual)
+                aria-current="page": atributo de acessibilidade que indica a página atual
+              -->
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"></script>
+</body>
+
+</html>

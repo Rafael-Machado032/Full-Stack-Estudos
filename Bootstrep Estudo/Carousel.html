@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carousel</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+  <div id="banner" class="carousel slide" data-bs-ride="true"><!--
+    carousel slide: define o estilo do carrossel
+    data-bs-ride="true": inicia o carrossel automaticamente
+  -->
+    <div class="carousel-indicators"><!-- indicadores de navegação -->
+      <button type="button" data-bs-target="#banner" data-bs-slide-to="0" class="active"
+        aria-current="true" aria-label="Slide 1"></button>
+        <!-- 
+          data-bs-target: define o id do carrossel
+          data-bs-slide-to: define o número do slide (começa do 0)
+          class="active": define o slide ativo
+          aria-current="true": define o slide ativo para leitores de tela
+          aria-label: define o rótulo do slide para leitores de tela
+        -->
+      <button type="button" data-bs-target="#banner" data-bs-slide-to="1"
+        aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#banner" data-bs-slide-to="2"
+        aria-label="Slide 3"></button>
+    </div>
+
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="./img/imagem1.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Título da Imagem 1</h5>
+          <p>Descrição da Imagem 1</p>
+        </div>
+      </div><!--
+        carousel-item: define o item do carrossel
+        active: define o item ativo
+        d-block: define a imagem como um bloco
+        w-100: define a largura da imagem como 100%
+        carousel-caption: define a legenda do carrossel
+        d-none d-md-block: esconde a legenda em telas pequenas e mostra em telas médias e grandes
+      -->
+      <div class="carousel-item">
+        <img src="./img/imagem2.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Título da Imagem 2</h5>
+          <p>Descrição da Imagem 2</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="./img/imagem3.jpg" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Título da Imagem 3</h5>
+          <p>Descrição da Imagem 3</p>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#banner"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button><!--
+      carousel-control-prev: define o botão de navegação para o slide anterior
+      data-bs-target: define o id do carrossel
+      data-bs-slide: define a direção do slide (prev ou next)
+      carousel-control-prev-icon: define o ícone do botão
+      aria-hidden="true": esconde o ícone para leitores de tela
+      visually-hidden: esconde o texto para leitores de tela
+    -->
+
+    <button class="carousel-control-next" type="button" data-bs-target="#banner"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
