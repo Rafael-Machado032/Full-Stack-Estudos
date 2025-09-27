@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Offcanvas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <!-- Offcanvas é um componente que desliza para dentro da tela a partir de um dos lados -->
+    <!-- offcanvas-start é a classe que define o offcanvas como vindo do lado esquerdo -->
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body">
+
+      <div>
+        Conteúdo do offcanvas. Você pode colocar texto, imagens ou qualquer outro elemento aqui.
+      </div>
+
+      <div class="dropdown mt-3">
+
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Dropdown button
+        </button>
+
+        <ul class="dropdown-menu">
+
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li>
+            <hr class="dropdown-divider">
+          </li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+  <div class="container-fluid" m-3>
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+      aria-controls="offcanvasExample">
+      <!--data-bs-toggle="offcanvas" Define o botão como um gatilho para abrir o offcanvas-->
+      <!--data-bs-target="#offcanvasExample" Especifica qual offcanvas será aberto quando o botão for clicado-->
+      Abrir Offcanvas
+    </button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
