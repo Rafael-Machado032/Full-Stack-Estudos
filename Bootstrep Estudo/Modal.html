@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Modal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container mt-5">
+    <!-- Botão para abrir o modal -->
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#meuModal">
+      Abrir Modal
+    </button>
+
+    <!-- Estrutura do Modal -->
+    <div class="modal fade" id="meuModal" tabindex="-1" aria-labelledby="meuModalLabel" aria-hidden="true">
+      <!--modal é um componente que sobrepõe o conteúdo da página, geralmente usado para exibir informações adicionais ou solicitar interação do usuário-->
+      <!--fade é uma classe que adiciona um efeito de transição suave ao modal -->
+      <div class="modal-dialog modal-dialog-scrollable">
+        <!--modal-dialog é a classe que define a estrutura do modal-->
+        <!--modal-lg é a classe que define o tamanho do modal, nesse caso grande-->
+        <!--modal-fullscreen é a classe que define o modal em tela cheia-->
+        <!--modal-dialog-scrollable é a classe que define o modal com rolagem-->
+        <div class="modal-content ">
+          <!--modal-content é a classe que define o conteúdo do modal-->
+          
+          <div class="modal-header"><!--modal-header é a classe que define o cabeçalho do modal-->
+            <h5 class="modal-title" id="meuModalLabel">Título do Modal</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+            <!--btn-close é a classe que define o botão de fechar o modal-->
+          </div>
+
+          <div class="modal-body"><!--modal-body é a classe que define o corpo do modal-->
+            <h3>Título do Conteúdo</h3>
+            <p>Você pode adicionar qualquer conteúdo aqui, incluindo texto, imagens ou formulários.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus officiis perferendis cupiditate dolores veniam amet corporis reiciendis cumque dolor sunt, rem, ab maxime fuga itaque excepturi. Culpa laborum numquam officia.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus officiis perferendis cupiditate dolores veniam amet corporis reiciendis cumque dolor sunt, rem, ab maxime fuga itaque excepturi. Culpa laborum numquam officia.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus officiis perferendis cupiditate dolores veniam amet corporis reiciendis cumque dolor sunt, rem, ab maxime fuga itaque excepturi. Culpa laborum numquam officia.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus officiis perferendis cupiditate dolores veniam amet corporis reiciendis cumque dolor sunt, rem, ab maxime fuga itaque excepturi. Culpa laborum numquam officia.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus officiis perferendis cupiditate dolores veniam amet corporis reiciendis cumque dolor sunt, rem, ab maxime fuga itaque excepturi. Culpa laborum numquam officia.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus officiis perferendis cupiditate dolores veniam amet corporis reiciendis cumque dolor sunt, rem, ab maxime fuga itaque excepturi. Culpa laborum numquam officia.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus officiis perferendis cupiditate dolores veniam amet corporis reiciendis cumque dolor sunt, rem, ab maxime fuga itaque excepturi. Culpa laborum numquam officia.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus officiis perferendis cupiditate dolores veniam amet corporis reiciendis cumque dolor sunt, rem, ab maxime fuga itaque excepturi. Culpa laborum numquam officia.</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus officiis perferendis cupiditate dolores veniam amet corporis reiciendis cumque dolor sunt, rem, ab maxime fuga itaque excepturi. Culpa laborum numquam officia.</p>
+          </div>
+
+          <div class="modal-footer"><!--modal-footer é a classe que define o rodapé do modal-->
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            <!--data-bs-dismiss="modal" é um atributo que fecha o modal ao ser clicado-->
+            <button type="button" class="btn btn-primary">Salvar mudanças</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
