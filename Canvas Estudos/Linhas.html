@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linhas</title>
+    <script>
+        function desenhar() {
+            const canvas = document.getElementById('desenho1');
+            const ctx = canvas.getContext('2d');
+            //getContext('2d') retorna um contexto de renderização bidimensional para o elemento canvas.
+
+            // Desenha uma linha
+            ctx.beginPath(); // Inicia um novo caminho
+            ctx.moveTo(50, 50); // Move o ponto inicial para (50, 50)
+            //moveTo(posX, posY) move o ponto inicial do caminho para as coordenadas especificadas.
+            ctx.lineTo(200, 50); // Desenha uma linha até (200, 50)
+            //lineTo(posX, posY) desenha uma linha até as coordenadas especificadas.
+            ctx.lineTo(200, 150); // Desenha uma linha até (200, 150)
+            ctx.closePath(); // Fecha o caminho, conectando o ponto final ao ponto inicial
+            ctx.strokeStyle = 'blue'; // Define a cor da linha como azul
+            ctx.lineWidth = 4; // Define a largura da linha
+            ctx.stroke(); // Desenha a linha no canvas
+            //stroke() desenha o contorno do caminho atual com a cor e largura de linha
+        }
+    </script>
+
+</head>
+
+<body onload="desenhar()">
+
+    <canvas id="desenho1" width="500" height="200" style="border: 1px solid black; background-color: lightgray;">
+        <h3>Seu navegador não suporta o elemento <code>canvas</code>.</h3>
+        <!--Caso o canvas não seja suportado, você pode fornecer uma alternativa aqui-->
+    </canvas>
+
+
+
+</body>
+
+</html>
