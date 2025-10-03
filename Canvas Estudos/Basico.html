@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+    <style>
+        #desenho1 {
+            border: 1px solid black;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+<canvas id="desenho1" width="500" height="200">
+    <h3>Seu navegador não suporta o elemento <code>canvas</code>.</h3>
+    <!--Caso o canvas não seja suportado, você pode fornecer uma alternativa aqui-->
+</canvas>
+
+<script>
+    const canvas = document.getElementById('desenho1');
+    const ctx = canvas.getContext('2d');
+    //getContext('2d') retorna um contexto de renderização bidimensional para o elemento canvas.
+    
+    // Desenha um retângulo
+    
+    ctx.fillStyle = 'blue'; // Define a cor de preenchimento como azul
+    ctx.fillRect(10, 10, 150, 100); // Desenha um retângulo azul
+    //fillRect(posX, posY, width, height) desenha um retângulo preenchido no canvas.
+    ctx.strokeStyle = 'red'; // Define a cor da borda como vermelho
+    ctx.lineWidth = 5; // Define a largura da linha da borda
+    ctx.strokeRect(10, 10, 150, 100); // Desenha a borda do retângulo
+
+    // Desenha um círculo
+    ctx.beginPath(); // Inicia um novo caminho
+    ctx.fillStyle = 'green'; // Muda a cor de preenchimento para verde
+    ctx.arc(300, 60, 50, 0, Math.PI * 2); // Desenha um círculo
+    //arc(posX, posY, radius, startAngle, endAngle) desenha um arco ou círculo no canvas.
+    ctx.fill(); // Preenche o círculo com a cor verde
+    //fill() preenche o caminho atual com a cor de preenchimento definida.
+    ctx.strokeStyle = 'black'; // Muda a cor da borda para preto
+    ctx.lineWidth = 3; // Define a largura da linha da borda
+    ctx.stroke(); // Desenha a borda do círculo
+    ctx.font = '20px Arial'; // Define a fonte para o texto
+</script>
+
+</body>
+</html>

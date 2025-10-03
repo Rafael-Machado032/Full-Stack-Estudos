@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimentar</title>
+    <script>
+        let x = 0;
+        let y = 0;
+        let d = 10;
+        let anima;
+        
+        function desenhar() {
+
+            const canvas = document.getElementById('desenho1');
+            const ctx = canvas.getContext('2d');
+            //getContext('2d') retorna um contexto de renderização bidimensional para o elemento canvas.
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpa o canvas
+            ctx.fillStyle = 'orange'; // Define a cor de preenchimento como verde
+            ctx.fillRect(x, y, 100, 50); // Desenha um retângulo preenchido em (x, y) com largura 100 e altura 100
+            x += d; // Move o retângulo 2 pixels para a direita
+            if (x > canvas.width) {
+                x = - 100; // Reseta a posição do retângulo quando ele sai da tela
+                y = Math.random() * (canvas.height - 100); // Move o retângulo para uma nova posição vertical aleatória
+                d=-10
+            }
+            
+            anima = requestAnimationFrame(desenhar); // Solicita que o navegador chame a função desenhar() antes do próximo repaint
+        }
+    </script>
+
+</head>
+
+<body onload="desenhar()">
+
+    <canvas id="desenho1" width="1000" height="600" style="border: 1px solid black; background-color: lightgray;">
+        <h3>Seu navegador não suporta o elemento <code>canvas</code>.</h3>
+        <!--Caso o canvas não seja suportado, você pode fornecer uma alternativa aqui-->
+    </canvas>
+
+
+
+</body>
+
+</html>
