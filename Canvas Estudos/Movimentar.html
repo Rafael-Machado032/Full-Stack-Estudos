@@ -8,7 +8,8 @@
     <script>
         let x = 0;
         let y = 0;
-        let d = 10;
+        let v = 100; // Velocidade de movimento
+        let d = v; // Incremento de movimento
         let anima;
         
         function desenhar() {
@@ -19,14 +20,21 @@
 
             ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpa o canvas
             ctx.fillStyle = 'orange'; // Define a cor de preenchimento como verde
-            ctx.fillRect(x, y, 100, 50); // Desenha um retângulo preenchido em (x, y) com largura 100 e altura 100
+            ctx.fillRect(x, y, 100, 5); // Desenha um retângulo preenchido em (x, y) com largura 100 e altura 100
             x += d; // Move o retângulo 2 pixels para a direita
+            console.log("x: " + x + " Largura: " + canvas.width);
             if (x > canvas.width) {
-                x = - 100; // Reseta a posição do retângulo quando ele sai da tela
-                y = Math.random() * (canvas.height - 100); // Move o retângulo para uma nova posição vertical aleatória
-                d=-10
+                console.log("x: " + x + " Largura: " + canvas.width);
+                d=-v; // Inverte a direção do movimento
+                //x = -canvas.width; // Reseta a posição do retângulo quando ele sai da tela
+                console.log("x: " + x + " Largura: " + canvas.width);
+                y = Math.random() * (canvas.height - 5); // Move o retângulo para uma nova posição vertical aleatória
+            }else if (x < -100) {
+                d=v; // Inverte a direção do movimento
+                //x = -canvas.width; // Reseta a posição do retângulo quando ele sai da tela
+                console.log("x: " + x + " Largura: " + canvas.width);
+                y = Math.random() * (canvas.height - 5); // Move o retângulo para uma nova posição vertical aleatória
             }
-            
             anima = requestAnimationFrame(desenhar); // Solicita que o navegador chame a função desenhar() antes do próximo repaint
         }
     </script>
@@ -35,7 +43,7 @@
 
 <body onload="desenhar()">
 
-    <canvas id="desenho1" width="1000" height="600" style="border: 1px solid black; background-color: lightgray;">
+    <canvas id="desenho1" width="750" height="600" style="border: 1px solid black; background-color: lightgray;">
         <h3>Seu navegador não suporta o elemento <code>canvas</code>.</h3>
         <!--Caso o canvas não seja suportado, você pode fornecer uma alternativa aqui-->
     </canvas>
