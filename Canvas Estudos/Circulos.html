@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimentar</title>
+    <script>
+        let anima; // Variável para armazenar o ID da animação
+        let rotação = 0;
+        let sentido = true;
+
+        function desenhar() {
+            const canvas = document.getElementById('desenho1');
+            const ctx = canvas.getContext('2d');
+            
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpa o canvas
+            // Desenha um círculo
+            ctx.beginPath(); // Inicia um novo caminho
+            //arc(posx, posy, raio, ânguloInicial, ânguloFinal,sentido) desenha um arco ou círculo com centro em (x, y) e o raio especificado, do ângulo inicial ao ângulo final, medido em radianos.
+            //sentido: true = sentido anti-horário, false = sentido horário
+            ctx.arc(110, 110, 100, 0, (Math.PI / 180) * rotação, sentido); // Desenha um círculo com centro em (150, 150) e raio 100
+            ctx.fillStyle = 'blue'; // Define a cor de preenchimento como azul claro
+            ctx.fill(); // Preenche o círculo com a cor definida
+            ctx.lineWidth = 5; // Define a largura da linha
+            ctx.strokeStyle = 'black'; // Define a cor da linha como preto
+            ctx.stroke(); // Desenha a borda do círculo
+
+            rotação += 2; // Incrementa a rotação
+            if (rotação > 360) {
+                rotação = 0; // Reseta a rotação se passar de 360
+                sentido = !sentido; // Inverte o sentido da rotação
+            }
+
+            anima = requestAnimationFrame(desenhar); // Solicita que o navegador chame a função desenhar() antes do próximo repaint
+        }
+    </script>
+
+</head>
+
+<body onload="desenhar()">
+
+    <canvas id="desenho1" width="750" height="600" style="border: 1px solid black; background-color: lightgray;">
+        <h3>Seu navegador não suporta o elemento <code>canvas</code>.</h3>
+        <!--Caso o canvas não seja suportado, você pode fornecer uma alternativa aqui-->
+    </canvas>
+
+
+
+</body>
+
+</html>

@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movimentar</title>
     <script>
-        let x = 0;
-        let y = 0;
+        let x = 0; // Posição inicial do retângulo
+        let y = 0; // Posição inicial do retângulo
         let v = 100; // Velocidade de movimento
         let d = v; // Incremento de movimento
-        let anima;
+        let anima; // Variável para armazenar o ID da animação
         
         function desenhar() {
 
@@ -20,7 +20,13 @@
 
             ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpa o canvas
             ctx.fillStyle = 'orange'; // Define a cor de preenchimento como verde
-            ctx.fillRect(x, y, 100, 5); // Desenha um retângulo preenchido em (x, y) com largura 100 e altura 100
+
+            ctx.lineWidth = 5; // Define a largura da linha
+            ctx.strokeStyle = 'black'; // Define a cor da linha como preta
+
+            ctx.fillRect(x, y, 100, 50); // Desenha um retângulo preenchido em (x, y) com largura 100 e altura 50
+            ctx.strokeRect(x, y, 100, 50); // Desenha a borda do retângulo
+
             x += d; // Move o retângulo 2 pixels para a direita
             console.log("x: " + x + " Largura: " + canvas.width);
             if (x > canvas.width) {
