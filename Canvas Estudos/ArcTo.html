@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+    <style>
+        #caixa {
+            border: 1px solid black;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+
+<body>
+    
+    
+    <canvas id="caixa" width="740" height="590">
+        <h3>Seu navegador não suporta o elemento <code>canvas</code>.</h3>
+        <!--Caso o canvas não seja suportado, você pode fornecer uma alternativa aqui-->
+    </canvas>
+
+    <script>
+        const canvas = document.getElementById('caixa');
+        const ctx = canvas.getContext('2d');
+        let anima;
+
+        function movimentar() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpa o canvas
+
+            ctx.beginPath();// Inicia um novo caminho
+            ctx.moveTo(0,0);// Inicia o caminho no ponto (0,0)
+            ctx.lineTo(canvas.width/2,canvas.height/2);// Desenha uma linha até o ponto (100,100)
+            ctx.lineTo(canvas.width,0);// Desenha uma linha até o ponto (100,100)
+            ctx.stroke(); // Define a cor da linha
+            ctx.closePath() //Fim do Caminho
+            
+            ctx.beginPath();// Inicia um novo caminho
+            ctx.moveTo(0,0);// Inicia o caminho no ponto (200,0)
+            ctx.arcTo(canvas.width/2,canvas.height,canvas.width,0,100);// Desenha um arco até o ponto (200,0) com raio 50
+            //arcTo(x1, y1, x2, y2, raio)
+            ctx.lineTo(canvas.width,0);// Desenha uma linha até o ponto (300,0)
+            ctx.stroke(); // Define a cor da linha
+            ctx.closePath() //Fim do Caminho
+            
+            
+
+            anima = requestAnimationFrame(movimentar);
+        }
+
+        // inicia quando o DOM estiver pronto
+        window.addEventListener('DOMContentLoaded', movimentar);
+    </script>
+
+
+</body>
+
+</html>
