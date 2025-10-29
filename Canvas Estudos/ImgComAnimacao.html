@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+    <style>
+        #caixa {
+            border: 1px solid black;
+            background-color: lightgray;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="./img/qdr.jpg" alt="">
+    </div>
+    <canvas id="caixa" width="740" height="590">
+        <h3>Seu navegador não suporta o elemento <code>canvas</code>.</h3>
+        <!--Caso o canvas não seja suportado, você pode fornecer uma alternativa aqui-->
+    </canvas>
+
+    <script>
+        const canvas = document.getElementById('caixa');
+        const ctx = canvas.getContext('2d');
+        let anima;
+
+        let qdr = new Image();
+        qdr.src = 'img/qdr.jpg';
+        let posiniX = 0;
+        let largura = 0;
+        let altura = 0;
+        let larguraSprite = 0;
+        let qtdSprites = 4;
+        let numSprite = 0; //0 a 3
+
+
+
+        function desenhar() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpa o canvas
+
+            ctx.beginPath();// Inicia um novo caminho
+            largura = qdr.width;
+            altura = qdr.height;
+            larguraSprite = largura / qtdSprites; //4 sprites na imagem
+            posiniX = larguraSprite * numSprite; //reduz o tamanho do sprite para 80%
+
+            ctx.drawImage(qdr, posiniX, 0, larguraSprite, altura, 100, 100, 100, 100);
+            // drawImage(imagem, sx, sy, sw, sh, dx, dy, dw, dh)
+            // sx, sy, sw, sh -> recorte da imagem
+            // dx, dy, dw, dh -> posição e tamanho no canvas
+
+
+            anima = requestAnimationFrame(desenhar);
+        }
+
+        // inicia quando o DOM estiver pronto
+        window.addEventListener('DOMContentLoaded', desenhar);
+    </script>
+
+
+</body>
+
+</html>
