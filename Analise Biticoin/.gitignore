@@ -1,0 +1,30 @@
+# Arquivos de sistema operacional e IDEs
+.DS_Store
+.env
+.env.local
+.vscode/
+
+# Ignorar a pasta do ambiente virtual do Python
+venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.pyo
+
+# Dependências do Next.js / Node
+node_modules/
+.next/
+out/
+
+# Arquivos de logs e de build
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+build/
+dist/
+
+# Ignorar arquivos gerados por testes (se aplicável)
+coverage/
+
+# Adicione outros arquivos que você não queira versionar
+# como arquivos de configurações de banco de dados locais, etc.
