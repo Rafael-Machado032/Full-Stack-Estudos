@@ -58,3 +58,35 @@ O que significam os parâmetros:
 - `--reload`: reinicia automaticamente ao salvar alterações.
 
 (Se desejar, especifique host/porta: `--host 127.0.0.1 --port 8000`)
+
+## Instalar a biblioteca de gráficos
+
+```bash
+npm install react-plotly.js plotly.js-dist
+```
+
+```bash
+npm i --save-dev @types/react-plotly.js
+```
+
+**Nota:** Este comando instala os tipos TypeScript para `react-plotly.js`, necessário para melhor autocompletar e verificação de tipos em projetos TypeScript.
+
+
+## Execultar Servidores
+
+**Back End**
+Execulta na pasta raiz
+```bash
+
+venv\Scripts\activate
+
+uvicorn backend.main:app --reload
+
+```
+**Front End**
+Execulta na pasta frontend
+```bash
+
+    npm run dev
+    
+```
