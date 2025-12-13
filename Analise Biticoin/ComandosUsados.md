@@ -71,6 +71,12 @@ npm i --save-dev @types/react-plotly.js
 
 **Nota:** Este comando instala os tipos TypeScript para `react-plotly.js`, necessário para melhor autocompletar e verificação de tipos em projetos TypeScript.
 
+## Instalar api da coinbase
+```bash
+
+npm install @coinbase/cdp-sdk
+
+```
 
 ## Execultar Servidores
 
@@ -81,6 +87,8 @@ Execulta na pasta raiz
 venv\Scripts\activate
 
 uvicorn backend.main:app --reload
+
+deactivate -> "É para desativar o ambiente"
 
 ```
 **Front End**
