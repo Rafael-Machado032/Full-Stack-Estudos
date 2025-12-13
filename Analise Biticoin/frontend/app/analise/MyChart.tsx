@@ -12,9 +12,7 @@ async function AnaliseBitcoinPage() {
     let error = null;
 
     try {
-        const response = await fetch('http://127.0.0.1:8000/api/bitcoin/data', {
-            cache: 'no-store' // Garante que sempre buscamos dados frescos);
-        });
+        const response = await fetch('http://127.0.0.1:8000/api/bitcoin/data');
         if (!response.ok) {
             throw new Error('Falha ao buscar os dados da API.');
         }
