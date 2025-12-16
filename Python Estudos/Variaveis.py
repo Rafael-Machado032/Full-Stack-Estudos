@@ -33,25 +33,34 @@ var = 3.14
 print("Tipo de var:", type(var))
 var = True
 print("Tipo de var:", type(var))
+
 x=complex(2,3)
 print("Tipo de x:", type(x))
 print("Valor de x:", x.imag, "+", x.real)
+
 i=["carro","moto","aviao"] #Lista / Array
 print("Valor de i pos 0:", i[0])
 print("Tipo de i:", type(i))
+
 a=("carro","moto","aviao") #Tupla
 #Tupla nao pode ser alterada
 print("Tipo de a:", type(a))
+
 d={"carro":"BMW","moto":"Honda","aviao":"Embraer"} #Dicionário
 #Dicionário chave:valor
 print("Valor de d moto:", d["moto"])
 print("Tipo de d:", type(d))
+
 e={7,5,7,4,8,6,4} #Conjunto
 #Conjunto não permite valores duplicados
 print("Tipo de e:", type(e))
 print("Valor de e:", e)
+
 b=({7,5,7,4,8,6,4}) #Frozenset
 #Frozenset não permite alterações
 print("Tipo de b:", type(b))
 print("Valor de b:", b)
+
+
+
 
