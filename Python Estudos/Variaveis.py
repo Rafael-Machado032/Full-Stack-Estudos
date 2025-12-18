@@ -61,6 +61,29 @@ b=({7,5,7,4,8,6,4}) #Frozenset
 print("Tipo de b:", type(b))
 print("Valor de b:", b)
 
+#Matrizes
 
+carro=[
+    ["BMW","Audi","Mercedes"],
+    ["Honda","Yamaha","Suzuki"],
+    ["Embraer","Airbus","Boeing"]
+]
+print("Tipo de carro:", type(carro))
+print("Valor de carro[0][1]:", carro[0][1])
+#Primeiro colchete seleciona a linha, o segundo colchete seleciona a coluna
+
+#Dicionário aninhado
+pessoa={
+    "nome":"Rafael",
+    "idade":21,
+    "endereco":{
+        "rua":"Rua A",
+        "cidade":"Sao Paulo",
+        "cep":"01234-567"
+    }
+}
+print("Tipo de pessoa:", type(pessoa))
+print("Valor do endereco da pessoa:", pessoa["endereco"]["cidade"])
+#Primeiro colchete seleciona a chave do dicionário, o segundo colchete seleciona a chave do dicionário aninhado
 
 
