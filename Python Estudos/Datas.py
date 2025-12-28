@@ -1,0 +1,28 @@
+import datetime
+
+data = datetime.datetime.now()
+print("Data e hora atuais:", data)
+print( data.day, "/", data.month, "/", data.year)
+
+nasc = datetime.datetime(1990, 5, 17)
+print("Data de nascimento:", nasc.strftime("%d/%m/%Y"))
+
+print("Dia da semana abreviado:", data.strftime("%a"))
+print("Dia da semana completo:", data.strftime("%A"))
+print("Dia da semana como número (0-6):", data.strftime("%w"))
+print("Numero da semana do ano: (0-53)", data.strftime("%W"))
+print("Mês abreviado:", data.strftime("%b"))
+print("Mês completo:", data.strftime("%B"))
+print("Mês como número (01-12):", data.strftime("%m"))
+print("Ano com século:", data.strftime("%Y"))
+print("Ano sem século:", data.strftime("%y"))
+print("Hora (24h):", data.strftime("%H"))
+print("Hora (12h):", data.strftime("%I"))
+print("Minutos:", data.strftime("%M"))
+print("Segundos:", data.strftime("%S"))
+print("Microsegundos:", data.strftime("%f"))
+print("AM/PM:", data.strftime("%p"))
+print("Data formatada (DD/MM/AAAA):", data.strftime("%d/%m/%Y"))
+print("Data formatada (MM-DD-AAAA):", data.strftime("%m-%d-%Y"))
+print("Data e hora completas:", data.strftime("%c"))
+print("Dia do ano (001-366):", data.strftime("%j"))

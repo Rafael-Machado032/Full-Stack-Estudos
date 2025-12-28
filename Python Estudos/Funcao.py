@@ -41,3 +41,5 @@ print("O resultado da funcao lambda com funcao passada como parametro eh:", lamb
 # "x" recebe o valor 10 e "func" recebe a função lambda que multiplica "y" por 2.
 # o "y" dentro da função lambda é substituído por "x" (que é 10), resultando em 10 * 2 = 20.
 # Então, a expressão completa se torna 10 + 20, resultando em 30.
+
+
