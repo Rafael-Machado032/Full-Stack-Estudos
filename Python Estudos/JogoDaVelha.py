@@ -66,11 +66,89 @@ def cpuJoga():
         jogadas += 1
 
 def verificarVitoria():
-    
+    global velha
+    vitoria = "n"
+    simbolo = ["X", "O"]
+    for s in simbolo:
+        vitoria = "n"
+        # Verificar linhas
+        il = ic = 0
+        while il < 3:
+            soma = 0
+            ic = 0
+            while ic < 3:
+                if velha[il][ic] == s:
+                    soma += 1
+                ic += 1
+            if soma == 3:
+                vitoria = s
+                break
+            il += 1
+        if vitoria != "n":
+            break
+        # Verificar colunas
+        ic = il = 0
+        while ic < 3:
+            soma = 0
+            il = 0
+            while il < 3:
+                if velha[il][ic] == s:
+                    soma += 1
+                il += 1
+            if soma == 3:
+                vitoria = s
+                break
+            ic += 1
+        if vitoria != "n":
+            break
+        # Verificar diagonais
+        soma = 0
+        idiagl = 0
+        idiagc = 2
+        while idiagc >= 0:
+            if velha[idiagl][idiagc] == s:
+                soma += 1
+            idiagl += 1
+            idiagc -= 1
+        if soma == 3:
+            vitoria = s
+            break
+        return vitoria
 
-while True:
-    tela()
-    jogadorJoga()
-    cpuJoga()
+def redefinir():
+    global velha
+    global jogadas
+    global quemJoga
+    global maxJogadas
+    global vit
+    jogadas = 0
+    quemJoga = 2
+    maxJogadas = 9
+    vit = "n"
+    velha = [
+        [" ", " ", " "],
+        [" ", " ", " "],
+        [" ", " ", " "]
+    ]
+
+
+while (jogarNovamente == "s"):
+    while True:
+        tela()
+        jogadorJoga()
+        cpuJoga()
+        tela()
+        vit = verificarVitoria()
+        if(vit != "n") or (jogadas >= maxJogadas):
+            break
+        
+    print(Fore.RED + "FIM DE JOGO!" + Style.RESET_ALL)
+    if(vit == "X" or vit == "O"):
+        print("Resultado: Jogador " + vit + " venceu!")
+    else:
+        print("Resultado: Deu Empate!")
+    jogarNovamente = input( Fore.BLUE + "Deseja jogar novamente? (s/n): " + Style.RESET_ALL)
+    redefinir()
+
 
 
