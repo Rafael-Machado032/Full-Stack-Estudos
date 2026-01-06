@@ -1,0 +1,28 @@
+{
+    "Nome": "Lionel Messi",
+    "Clube": "Paris Saint-Germain",
+    "Posição": "Atacante",
+    "Gols": 30,
+    "Times": [
+        "Barcelona",
+        "Paris Saint-Germain",
+        "Argentina"
+    ],
+    "Uniforme": [
+        {
+            "Camisa": 10,
+            "Shorts": 8,
+            "Meias": 10
+        },
+        {
+            "Camisa": 30,
+            "Shorts": 25,
+            "Meias": 30
+        },
+        {
+            "Camisa": 10,
+            "Shorts": 8,
+            "Meias": 10
+        }
+    ]
+}
