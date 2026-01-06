@@ -1,0 +1,24 @@
+{
+    "carros1": [
+        {
+            "modelo": "Gol",
+            "marca": "Volkswagen",
+            "ano": 2015
+        },
+        {
+            "modelo": "Civic",
+            "marca": "Honda",
+            "ano": 2018
+        },
+        {
+            "modelo": "Corolla",
+            "marca": "Toyota",
+            "ano": 2020
+        },
+        {
+            "modelo": "Honda Fit",
+            "marca": "Honda",
+            "ano": 2022
+        }
+    ]
+}
