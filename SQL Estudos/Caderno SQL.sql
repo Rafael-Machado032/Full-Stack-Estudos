@@ -1,4 +1,6 @@
 --MySQL
+
+-------------------------------------------------------------------------------------------------------------
 --DDL Data Definition Language (Linguagem de Definição de dados)
 /*Comentários*/
 SELECT * FROM cliente;
