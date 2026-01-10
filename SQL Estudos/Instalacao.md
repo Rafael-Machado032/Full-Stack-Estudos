@@ -46,3 +46,10 @@
     MySQL É um banco de dados mais robusto, usado para aplicaçoes web que suportam moitas conexoes simultaneas
     Arquivo com extensão .sql é um arquivo de script SQL
     Arquivo com extensão .db é um arquivo de banco de dados SQLite
+
+    **Criação de tabelas e atributos**
+
+(tipo de dado) _ (nome do campo) _ (nome da tabela)
+
+    tb -> Nome da tabela ex: tb_contato
+    n -> Campos numerico ex: n_telefone
