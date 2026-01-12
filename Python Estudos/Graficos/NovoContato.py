@@ -152,34 +152,34 @@ app = Tk() # Cria a janela principal da aplicação
 # bordermode="inside" ou "outside"      -> se deve levar em consideração a largura da borda do widget mestre
 
 app.title("Gráfico Banco de Dados") # Define o título da janela
-app.geometry("700x600") # Define o tamanho da janela (largura x altura)
+app.geometry("500x400") # Define o tamanho da janela (largura x altura)
 app.configure(bg="blue") # Define a cor de fundo da janela
 
-titulo = Label(app, text="Gráfico com Banco de Dados", bg="yellow", fg="black", font=("Arial", 16))
+titulo = Label(app, text="Novo Contato", bg="yellow", fg="black", font=("Arial", 16))
 titulo.pack(pady=20)
 
 conexao = ConexaoBancoDados()
 CriarTabela(conexao)
 
 nome_label = Label(app, text="Nome:", bg="blue", fg="white", font=("Arial", 12))
-nome_label.pack(anchor=W, padx=10)
+nome_label.pack(anchor=W, padx=55)
 nome_entry = Entry(app, bg="white", fg="black", font=("Arial", 12))
-nome_entry.pack(anchor=W, padx=10, ipadx=100)
+nome_entry.pack(padx=20, ipadx=100)
 
 telefone_label = Label(app, text="Telefone:", bg="blue", fg="white", font=("Arial", 12))
-telefone_label.pack(anchor=W, padx=10)
+telefone_label.pack(anchor=W, padx=55)
 telefone_entry = Entry(app, bg="white", fg="black", font=("Arial", 12))
-telefone_entry.pack(anchor=W, padx=10, ipadx=100)
+telefone_entry.pack(padx=20, ipadx=100)
 
 email_label = Label(app, text="Email:", bg="blue", fg="white", font=("Arial", 12))
-email_label.pack(anchor=W, padx=10)
+email_label.pack(anchor=W, padx=55)
 email_entry = Entry(app, bg="white", fg="black", font=("Arial", 12))
-email_entry.pack(anchor=W, padx=10, ipadx=100)
+email_entry.pack(padx=20, ipadx=100)
 
 observacao_label = Label(app, text="Observação:", bg="blue", fg="white", font=("Arial", 12))
-observacao_label.pack(anchor=W, padx=10)
-observacao_text = Text(app, bg="white", fg="black", font=("Arial", 12), height=5)
-observacao_text.pack(anchor=W, padx=10)
+observacao_label.pack(anchor=W, padx=55)
+observacao_text = Text(app, bg="white", fg="black", font=("Arial", 12), height=5, width=42)
+observacao_text.pack(padx=20)
 
 gravar_btn = Button(app, text="Gravar Contato", bg="orange", fg="black", font=("Arial", 12),
                     command=lambda: InserirDados(
