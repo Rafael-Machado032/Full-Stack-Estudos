@@ -111,7 +111,7 @@ def PesquisarContato(conexao, id):
         print(f"Erro ao pesquisar contato: {e}")
         return None
     
-app = Tk() # Cria a janela principal da aplicação
+app = Toplevel() # Cria a janela principal da aplicação
 
 #        "PACK" um widget no widget pai. Use as opções:
 
