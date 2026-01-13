@@ -9,10 +9,6 @@ def semComando():
 
 def novoContato():
     exec(open(caminho).read(), globals())
-    
-
-
-
 
 app = Tk()
 app.title("Barra de Menu")
