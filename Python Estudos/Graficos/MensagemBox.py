@@ -23,7 +23,7 @@ def resetarTB():
 
 vmsg="Rafael Machado"
 
-app = Toplevel()
+app = Tk()
 app.title("Curso Python")
 app.geometry("500x400")
 
