@@ -10,7 +10,7 @@ def imprimirEsporte():
     else:
         print("Esporte Basquete")
 
-app = Toplevel()
+app = Tk()
 app.title("Curso Python")
 app.geometry("500x400")
 
