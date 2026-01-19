@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
+import B
 
 def inserir():
     if vid.get() == "" or vnome.get() == "" or vsenha.get() == "":
@@ -13,10 +14,25 @@ def inserir():
 
 
 def deletar():
-    print()
+    try:
+        itemSelecionado = tv.selection()[0]
+        tv.delete(itemSelecionado)
+    except:
+        messagebox.showerror(title="ERRO",message="Selecione o item a ser deletado!")
 
 def mostrar():
-    print()
+    try:
+        itemSelecionado = tv.selection()[0]
+        valores = tv.item(itemSelecionado,"values")
+        print("----------------------------")
+        print(f"ID ..........: {valores[0]}")
+        print(f"Nome ........: {valores[1]}")
+        print(f"Senha .......: {valores[2]}")
+        
+        
+    except:
+        messagebox.showerror(title="ERRO",message="Selecione o item a ser mostrado!")
+
 
 app=Tk()
 app.title("Curso de Python")
