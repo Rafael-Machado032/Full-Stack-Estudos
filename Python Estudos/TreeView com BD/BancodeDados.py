@@ -29,7 +29,7 @@ def CriarTabela(conexao):
             CREATE TABLE IF NOT EXISTS contatos (
                 i_contato_contatos INTEGER PRIMARY KEY AUTOINCREMENT,
                 s_nome_contatos TEXT NOT NULL,
-                n_telefone_contatos INTEGER,
+                n_telefone_contatos INTEGER
             );
         """)
         # CREATE TABLE IF NOT EXISTS cria a tabela apenas se ela não existir
@@ -45,7 +45,7 @@ def InserirDados(conexao, nome, telefone):
         cursor = conexao.cursor() # Cria um cursor para executar comandos SQL
         cursor.execute("""
             INSERT INTO contatos (s_nome_contatos, n_telefone_contatos)
-            VALUES (?, ?, ?);
+            VALUES (?, ?);
         """, (nome, telefone))
         conexao.commit() # Salva as alterações no banco de dados
         print("Dados inseridos com sucesso na tabela 'contatos'.")
@@ -59,8 +59,7 @@ def EditarDados(conexao, id_contato, nome, telefone):
         cursor = conexao.cursor() # Cria um cursor para executar comandos SQL
         cursor.execute("""
             UPDATE contatos
-            SET s_nome_contatos = ?, n_telefone_contatos = ?, s_email_contatos = ?
-            WHERE i_contato_contatos = ?;
+            SET s_nome_contatos = ?, n_telefone_contatos = ? WHERE i_contato_contatos = ?;
         """, (nome, telefone, id_contato))
         conexao.commit() # Salva as alterações no banco de dados
         print("Dados atualizados com sucesso na tabela 'contatos'.")
@@ -93,11 +92,11 @@ def ConsultarDados(conexao):
         return []
     
 #Pesquisar contato na tabela
-def PesquisarContato(conexao, id):
-    """Pesquisa um contato na tabela 'contatos' com base no ID fornecido."""
+def PesquisarContato(conexao, nome):
+    """Pesquisa um contato na tabela 'contatos' com base no nome fornecido."""
     try:
         cursor = conexao.cursor() # Cria um cursor para executar comandos SQL
-        cursor.execute("SELECT * FROM contatos WHERE i_contato_contatos = ?;", (id,))
+        cursor.execute("SELECT * FROM contatos WHERE s_nome_contatos LIKE ?;", (f"%{nome}%",))
         resultado = cursor.fetchone() # Obtém o primeiro resultado da consulta
         return resultado
     except Error as e:

@@ -13,18 +13,20 @@ def popular():
 
 
 def inserir():
-    if vnome.get() == "" or vtelefone.get() == "":
+    if vnome.get().strip() == "" or vtelefone.get().strip() == "":
         messagebox.showerror(title="ERRO", message="Digite todos os dados")
         return
     try:
         conexao = BancodeDados.ConexaoBancoDados()
         BancodeDados.InserirDados(conexao, vnome.get(), vtelefone.get())
+        conexao.close()
         messagebox.showinfo(title="SUCESSO", message="Contato inserido com sucesso!")
+        vnome.delete(0,END)
+        vtelefone.delete(0,END)
         popular()
-    except:
-        messagebox.showerror(title="ERRO", message="Erro ao inserir contato!")
-    vnome.delete(0,END)
-    vtelefone.delete(0,END)
+    except Exception as e:
+        print(f"Erro ao inserir: {e}")
+        messagebox.showerror(title="ERRO", message=f"Erro ao inserir contato!\n{str(e)}")
 
 
 def deletar():
@@ -40,7 +42,7 @@ def deletar():
 def pesquisar():
     try:
         conexao = BancodeDados.ConexaoBancoDados()
-        resultado = BancodeDados.PesquisarContato(conexao, vnome.get())
+        resultado = BancodeDados.PesquisarContato(conexao, vnomePesquisar.get())
         tv.delete(*tv.get_children())
         if resultado:
             tv.insert("","end",values=resultado)
@@ -85,10 +87,10 @@ quadroPesquisar.pack(fill="both",expand="yes",padx=10,pady=10)
 
 lb_nome=Label(quadroPesquisar,text="NOME:")
 lb_nome.pack(side=LEFT)
-vnome=Entry(quadroPesquisar)
-vnome.pack(side=LEFT,padx=10)
+vnomePesquisar=Entry(quadroPesquisar)
+vnomePesquisar.pack(side=LEFT,padx=10)
 
-btn_pesquisar=Button(quadroPesquisar,text="Pesquisar",command=inserir)
+btn_pesquisar=Button(quadroPesquisar,text="Pesquisar",command=pesquisar)
 btn_pesquisar.pack(side=LEFT,padx=10)
 btn_mostrar=Button(quadroPesquisar,text="Mostrar Tudo",command=popular)
 btn_mostrar.pack(side=LEFT,padx=10)
