@@ -4,44 +4,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.css" />
+    <!--JsSocials-->
     <link type="text/css" rel="stylesheet"
-        href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-flat.css" />
+        href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-flat.css" /><!--JsSocials-->
     <link type="text/css" rel="stylesheet"
-        href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-classic.css" />
+        href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-classic.css" /><!--JsSocials-->
     <link type="text/css" rel="stylesheet"
-        href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-minima.css" />
+        href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-minima.css" /><!--JsSocials-->
     <link type="text/css" rel="stylesheet"
-        href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-plain.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+        href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-plain.css" /><!--JsSocials-->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.css" />
+    <!--FancyBox-->
+
+    <link rel="stylesheet" href="./css/style.css">
+
     <title>Pluguin Midia Social</title>
 </head>
 
 <body>
+    <!-- Exemplos -->
+    <div id="shareIconsCountInside"></div>
+
+    <input type="text" class="cpf" placeholder="CPF">
+    <input type="text" class="telefone" placeholder="Telefone">
+    <input type="text" class="data" placeholder="Data">
+    <input type="text" class="ip" placeholder="IP">
+
+    <div>
+        <a href="./img/imagem1.jpg" data-fancybox="galeria1" data-caption="Imagem #1">
+            <img src="./img/imagem1.jpg" />
+        </a>
+        <a href="./img/imagem2.jpg" data-fancybox="galeria1" data-caption="Imagem#2">
+            <img src="./img/imagem2.jpg" />
+        </a>
+        <a href="./img/imagem3.jpg" data-fancybox="galeria1" data-caption="Imagem #3">
+            <img src="./img/imagem3.jpg" />
+        </a>
+        <a href="./img/imagem4.jpg" data-fancybox="galeria1" data-caption="Imagem #4">
+            <img src="./img/imagem4.jpg" />
+        </a>
+        <a href="./img/imagem5.jpg" data-fancybox="galeria1" data-caption="Imagem #5">
+            <img src="./img/imagem5.jpg" />
+        </a>
+        <a href="./img/imagem6.jpg" data-fancybox="galeria1" data-caption="Imagem #6">
+            <img src="./img/imagem6.jpg" />
+        </a>
+    </div>
 
 
 
+    <!-- Exemplos -->
 
 
-    <div id="share"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script><!--JQuery-->
+
+    <!--Os plugins sempre são depois do jquery pois depende dele para funiconar-->
+    <script src="https://kit.fontawesome.com/ee3bb032cd.js" crossorigin="anonymous"></script><!--FontAwesome-->
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.min.js"></script>
+    <!--JsSocials-->
 
 
+    <script src="./plugins/jquery.mask.js"></script><!--JQuery Mask-->
 
-
-
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.umd.js"></script><!--FancyBox-->
 
     <script>
         $(document).ready(rodar);
         function rodar() { // O ready so executa quando o DOM estiver totalmente carregado
-            $("#share").jsSocials({
+
+            //JsSocials
+            $("#shareIconsCountInside").jsSocials({
+                url: "http://www.google.com",
+                text: "Google Search Page",
+                showLabel: false,
+                showCount: "inside",
                 shares: ["twitter", "facebook", "googleplus", "linkedin", "pinterest", "stumbleupon", "whatsapp"]
+            });
+
+            //JQuery Mask
+            $('.cpf').mask('000.000.000-00');
+            $('.telefone').mask('(00)00000-0000');
+            $('.data').mask('00/00/0000');
+            $('.ip').mask('000.000.000.000');
+
+
+            //FancyBox
+            // Fancybox.bind("[data-fancybox]", {
+            //     // Your custom options
+            // });
+
+            Fancybox.bind("[data-fancybox]", {
+                Carousel: {
+                    Thumbs: false,
+                    Toolbar: {
+                        display: {
+                            left: [],
+                            middle: [],
+                            right: ["close"],
+                        },
+                    },
+                    Zoomable: {
+                        Panzoom: {
+                            maxScale: "cover",
+                            panMode: "mousemove",
+                            mouseMoveFactor: 1.1,
+                        },
+                    },
+                },
             });
         }
     </script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.min.js"></script>
-    <script src="https://code.jquery.com/jquery-4.0.0.js"
-        integrity="sha256-9fsHeVnKBvqh3FB2HYu7g2xseAZ5MlN6Kz/qnkASV8U=" crossorigin="anonymous">
-        </script>
+
+
 </body>
 
 </html>
