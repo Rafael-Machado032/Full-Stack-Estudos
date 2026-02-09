@@ -1,5 +1,0 @@
-{
-  "dependencies": {
-    "@coinbase/cdp-sdk": "^1.40.1"
-  }
-}
