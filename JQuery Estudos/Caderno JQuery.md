@@ -23,9 +23,7 @@ https://js-socials.com/start-using/ <!-- Usado para usar botões de rede sociais
 
 Link para usar JsSociais via CDN:
 
-<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.min.js"></script>
-
-<script src="https://kit.fontawesome.com/ee3bb032cd.js" crossorigin="anonymous"></script>
+CSS
 
 <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.css" />
 
@@ -33,6 +31,12 @@ Link para usar JsSociais via CDN:
 <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-classic.css" />
 <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-minima.css" />
 <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials-theme-plain.css" />
+
+JS
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.jssocials/1.4.0/jssocials.min.js"></script>
+
+<script src="https://kit.fontawesome.com/ee3bb032cd.js" crossorigin="anonymous"></script>
 
 Arquivo Baixado:
 
@@ -59,7 +63,11 @@ https://fancyapps.com/fancybox/get-started/installation/ <!--Usado para fazer sl
 
 Link para usar JsSociais via CDN:
 
+CSS
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.css"/>
+
+JS
 
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.1/dist/fancybox/fancybox.umd.js"></script>
 
@@ -67,4 +75,24 @@ Arquivo Baixado:
 
 <script src="fancybox.umd.js"></script>
 <link rel="stylesheet" href="fancybox.css" />
+
+/* Slick Slider */
+
+site do plugin:
+https://kenwheeler.github.io/slick/ <!--Usado para fazer rolagem de galeria-->
+
+Link para usar JsSociais via CDN:
+
+CSS
+
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+JS
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+Arquivo Baixado:
+
+<script src="slick.js"></script>
+<link rel="stylesheet" href="slick.css" />
 
