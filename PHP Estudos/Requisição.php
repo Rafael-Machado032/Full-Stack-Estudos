@@ -32,3 +32,62 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') { //Testa o method enviado
 if (isset($_GET['acao']) && $_GET['acao'] === 'limpar') { //isset() verifica se existe a chave no url
     echo "♻️ Você clicou em um link GET. O sistema foi 'limpado'.";
 }
+
+/* Cookies e Sessões */
+
+//1. Cookies
+// Os cookies são pequenos arquivos de texto armazenados no computador do usuário (navegador). 
+// Eles são úteis para guardar preferências (como tema escuro/claro) que duram mesmo após o navegador ser fechado.
+
+//setcookie(nome, valor, expiração, caminho);
+
+// Criar um cookie chamado "usuario" que vale por 1 hora (3600 segundos)
+setcookie("usuario", "João", time() + 3600, "/");
+
+// Ler o cookie
+if(isset($_COOKIE["usuario"])) {
+    echo "Bem-vindo, " . $_COOKIE["usuario"];
+}
+
+//2. Sessões (Sessions)
+// As sessões armazenam dados no servidor. 
+// São mais seguras que cookies e muito usadas para sistemas de login, 
+// pois os dados somem quando o usuário fecha o navegador (ou após um tempo de inatividade).
+
+// session_start(); (Deve ser a primeira coisa no código, antes de qualquer HTML)
+// $_SESSION["chave"] = "valor";
+
+// Iniciar a sessão
+session_start();
+
+// Gravar dados
+$_SESSION["usuario_id"] = 123;
+$_SESSION["perfil"] = "admin";
+
+// Ler dados em outra página
+echo "ID do usuário logado: " . $_SESSION["usuario_id"];
+
+//Ex avançado:
+
+session_start(); // Sempre inicie para poder manipular
+
+// 1. Limpa as variáveis na memória
+session_unset();
+
+// 2. Destrói a sessão no servidor
+session_destroy();
+
+// 3. Opcional: Apaga o cookie de sessão no navegador (Garante 100%)
+if (ini_get("session.use_cookies")) {
+    $params = session_get_cookie_params();
+    setcookie(session_name(), '', time() - 42000,
+        $params["path"], $params["domain"],
+        $params["secure"], $params["httponly"]
+    );
+}
+
+// 4. Redireciona para o login
+header("Location: login.php");
+exit();
+?>
+
