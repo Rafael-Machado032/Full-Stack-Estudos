@@ -17,6 +17,11 @@ Ative as seguintes extensões (removendo o `;`):
 - `extension=openssl` (Segurança/SSL)
 - `extension=pdo_mysql` (Conexão com Banco de Dados)
 - `extension=zip` (Descompactação de pacotes pelo Composer)
+- `extension=fileinfo` (Lidar com arquivos)
+- `extension=gd`  (Manipulação de imagens)
+- `extension=sqlite3` (Suporte básico ao banco de dados SQLite)
+- `extension=pdo_sqlite`(Driver de conexão que o Laravel usa para o SQLite)
+
 
 ## 3. Gerenciador de Dependências (Composer)
 - **Instalação:** Instale usando `Composer-Setup.exe` apontando para o binário em `C:\PHP\php.exe`.
