@@ -9,7 +9,7 @@
 1. **Pré-requisitos**: Tenha o Node.js instalado em seu computador.
 2. **Criar um projeto Next.js**:
 ```bash
-    npx create-next-app nome-do-projeto
+    npx create-next-app@latest frontend --yes
 ```
 3. **Executar o projeto**:
 ```bash
